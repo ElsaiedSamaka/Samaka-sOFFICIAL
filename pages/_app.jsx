@@ -12,7 +12,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <button onClick={toggleTheme}>Switch Theme</button>
+      <input id="toggle" class="toggle" type="checkbox" onClick={toggleTheme} />
       <Component {...pageProps} />
     </ThemeProvider>
   );
