@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import "../styles/app.scss";
-import { darkTheme, lightTheme, GlobalStyles } from "../ThemeConfig";
+import { darkTheme, GlobalStyles, lightTheme } from "../ThemeConfig";
 // This default export is required in a new `pages/_app.js` file.
 
 export default function MyApp({ Component, pageProps }) {
@@ -12,8 +12,8 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <input id="toggle" class="toggle" type="checkbox" onClick={toggleTheme} />
       <Component {...pageProps} />
+      {/* <input id='toggle' class='toggle' type='checkbox' onClick={toggleTheme} /> */}
     </ThemeProvider>
   );
 }
