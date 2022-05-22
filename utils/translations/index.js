@@ -1,9 +1,20 @@
 import aboutTranslations from "./pages/about";
+import contactTranslations from "./pages/contact";
 import homeTranslations from "./pages/home";
 
 const allTranslations = {
-  en: Object.assign({}, homeTranslations.en, aboutTranslations.en),
-  ar: Object.assign({}, homeTranslations.ar, aboutTranslations.ar),
+  en: Object.assign(
+    {},
+    homeTranslations.en,
+    aboutTranslations.en,
+    contactTranslations.en
+  ),
+  ar: Object.assign(
+    {},
+    homeTranslations.ar,
+    aboutTranslations.ar,
+    contactTranslations.ar
+  ),
 };
 
 /*
