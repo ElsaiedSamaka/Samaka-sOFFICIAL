@@ -1,11 +1,16 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import Navbar from "../components/Navbar";
+import useTranslation from "../hooks/useTranslation";
 
 function About() {
+  const { locale } = useRouter();
+  const { t } = useTranslation(locale);
+
   return (
     <>
       <Head>
-        <title>About</title>
+        <title>{t("About")}</title>
       </Head>
 
       <Navbar />
@@ -13,7 +18,7 @@ function About() {
       <section className='hero'>
         <div className='container'>
           <div className='text-wrapper w-full'>
-            <h1 className='title'>About</h1>
+            <h1 className='title'>{t("About")}</h1>
             <p className='description'>
               Born in [1997,march] and raised in Sammnoud - Egypt;
               <br></br> Saied is a senior graduated Cs student who's so
@@ -67,12 +72,12 @@ function About() {
               </li>
             </ul>
             <hr />
-					  <h1 className='title'>Languages</h1>
-					  <ul>
-						  <li>Arabic: Native</li>
-						  <li>English: Fluent</li>
-						  <li>Frensh: Conversational</li>
-					  </ul>
+            <h1 className='title'>Languages</h1>
+            <ul>
+              <li>Arabic: Native</li>
+              <li>English: Fluent</li>
+              <li>Frensh: Conversational</li>
+            </ul>
           </div>
         </div>
       </section>
