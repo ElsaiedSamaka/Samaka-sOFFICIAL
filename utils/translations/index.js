@@ -1,8 +1,9 @@
+import aboutTranslations from "./pages/about";
 import homeTranslations from "./pages/home";
 
 const allTranslations = {
-  en: Object.assign({}, homeTranslations.en),
-  ar: Object.assign({}, homeTranslations.ar),
+  en: Object.assign({}, homeTranslations.en, aboutTranslations.en),
+  ar: Object.assign({}, homeTranslations.ar, aboutTranslations.ar),
 };
 
 /*
