@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { withRouter } from "next/router";
+import { useTheme } from "../hooks/useTheme";
 
 function Navbar({ router }) {
+  const { theme, toggleTheme } = useTheme();
+
   const navs = [
     { text: "Home", href: "/" },
     { text: "About", href: "/about" },
@@ -14,7 +17,7 @@ function Navbar({ router }) {
     <nav className='navbar'>
       <div className='container'>
         <Link href='/'>
-          <a className='logo'>Samaka.</a>
+          <a className='logo'>Samaka. {theme}</a>
         </Link>
 
         <ul className='nav-links'>
@@ -32,6 +35,12 @@ function Navbar({ router }) {
             </li>
           ))}
         </ul>
+        <input
+          id='toggle'
+          className='toggle'
+          type='checkbox'
+          onClick={toggleTheme}
+        />
       </div>
     </nav>
   );

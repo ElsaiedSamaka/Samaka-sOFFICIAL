@@ -1,19 +1,21 @@
-import { useState } from "react";
 import { ThemeProvider } from "styled-components";
+import { useTheme } from "../hooks/useTheme";
 import "../styles/app.scss";
-import { darkTheme, GlobalStyles, lightTheme } from "../ThemeConfig";
+import { ThemeCTXProvider } from "../theme/ThemeProvider";
+import { GlobalStyles, lightTheme } from "../ThemeConfig";
+
 // This default export is required in a new `pages/_app.js` file.
 
 export default function MyApp({ Component, pageProps }) {
-  const [theme, setTheme] = useState("light");
-  const toggleTheme = () => {
-    theme == "light" ? setTheme("dark") : setTheme("light");
-  };
+  const { theme } = useTheme();
+
   return (
-    <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
-      <GlobalStyles />
-      <Component {...pageProps} />
-      {/* <input id='toggle' class='toggle' type='checkbox' onClick={toggleTheme} /> */}
-    </ThemeProvider>
+    <ThemeCTXProvider>
+      {/* theme value seem to be changing propaply for some reason it's not updated on theme provider */}
+      <ThemeProvider theme={theme == "light" ? lightTheme : lightTheme}>
+        <GlobalStyles />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </ThemeCTXProvider>
   );
 }
