@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { withRouter } from "next/router";
 import { useTheme } from "../hooks/useTheme";
+import useTranslation from "../hooks/useTranslation";
 import LangSwitchBtn from "./LangSwitchBtn";
 
 function Navbar({ router }) {
   const { theme, toggleTheme } = useTheme();
   const { locale } = router;
+  const { t } = useTranslation(locale);
 
   const navs = [
     {
@@ -15,12 +17,12 @@ function Navbar({ router }) {
     },
     {
       en: "About",
-      ar: "عن",
+      ar: "عني",
       href: "/about",
     },
     {
       en: "Portfolio",
-      ar: "بروتوفوليو",
+      ar: "بورتفوليو",
       href: "/portfolio",
     },
     {
@@ -35,7 +37,7 @@ function Navbar({ router }) {
     <nav className='navbar'>
       <div className='container'>
         <Link href='/'>
-          <a className='logo'>Samaka. {theme}</a>
+          <a className='logo'>{t("home.nav")}</a>
         </Link>
         <LangSwitchBtn />
 
