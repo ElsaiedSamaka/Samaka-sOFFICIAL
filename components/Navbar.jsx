@@ -5,12 +5,29 @@ import LangSwitchBtn from "./LangSwitchBtn";
 
 function Navbar({ router }) {
   const { theme, toggleTheme } = useTheme();
+  const { locale } = router;
 
   const navs = [
-    { text: "Home", href: "/" },
-    { text: "About", href: "/about" },
-    { text: "Portfolio", href: "/portfolio" },
-    { text: "Contact", href: "/contact" },
+    {
+      en: "Home",
+      ar: "الرئيسية",
+      href: "/",
+    },
+    {
+      en: "About",
+      ar: "عن",
+      href: "/about",
+    },
+    {
+      en: "Portfolio",
+      ar: "بروتوفوليو",
+      href: "/portfolio",
+    },
+    {
+      en: "Contact",
+      ar: "تواصل",
+      href: "/contact",
+    },
     // { text: '', href: '' },
   ];
 
@@ -23,15 +40,15 @@ function Navbar({ router }) {
         <LangSwitchBtn />
 
         <ul className='nav-links'>
-          {navs.map((nav) => (
-            <li key={nav.text}>
+          {navs.map((nav, i) => (
+            <li key={i}>
               <Link href={nav.href}>
                 <a
                   className={`nav-item ${
                     router.pathname == nav.href ? "active" : ""
                   }`}
                 >
-                  {nav.text}
+                  {nav[locale]}
                 </a>
               </Link>
             </li>
