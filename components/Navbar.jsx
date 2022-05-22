@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { withRouter } from "next/router";
 import { useTheme } from "../hooks/useTheme";
+import LangSwitchBtn from "./LangSwitchBtn";
 
 function Navbar({ router }) {
   const { theme, toggleTheme } = useTheme();
@@ -19,6 +20,7 @@ function Navbar({ router }) {
         <Link href='/'>
           <a className='logo'>Samaka. {theme}</a>
         </Link>
+        <LangSwitchBtn />
 
         <ul className='nav-links'>
           {navs.map((nav) => (
