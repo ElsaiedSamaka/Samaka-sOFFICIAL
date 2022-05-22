@@ -2,7 +2,7 @@ import Link from "next/link";
 import { withRouter } from "next/router";
 import { useTheme } from "../hooks/useTheme";
 import useTranslation from "../hooks/useTranslation";
-import LangSwitchBtn from "./LangSwitchBtn";
+import LangRadioBtn from "./LangRadioBtn";
 
 function Navbar({ router }) {
   const { theme, toggleTheme } = useTheme();
@@ -39,7 +39,6 @@ function Navbar({ router }) {
         <Link href='/'>
           <a className='logo'>{t("home.nav")}</a>
         </Link>
-        <LangSwitchBtn />
 
         <ul className='nav-links'>
           {navs.map((nav, i) => (
@@ -62,6 +61,8 @@ function Navbar({ router }) {
           type='checkbox'
           onClick={toggleTheme}
         />
+        {/* <LangSwitchBtn /> */}
+        <LangRadioBtn />
       </div>
     </nav>
   );

@@ -27,7 +27,6 @@ function Home() {
                 <a className='cta'>{t("home.contact")}</a>
               </Link>
             </div>
-
             <div className='image-wrapper'>
               <img src='/vector.png' />
             </div>
