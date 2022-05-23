@@ -19,10 +19,10 @@ const LangRadioBtn = () => {
         name='toggle'
         value='false'
         type='radio'
-        checked={true}
+        defaultChecked={true}
         onClick={handleClick}
       />
-      <label for='toggle-on' className='btn'>
+      <label htmlFor='toggle-on' className='btn'>
         {locale === "en" ? "العربية" : "English"}
       </label>
       {/* <input
