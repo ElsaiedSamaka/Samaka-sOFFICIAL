@@ -15,26 +15,29 @@ const LangRadioBtn = () => {
     <div>
       <input
         id='toggle-on'
-        class='toggle toggle-left'
+        className='toggle toggle-left'
         name='toggle'
         value='false'
         type='radio'
+        checked={true}
         onClick={handleClick}
       />
-      <label for='toggle-on' class='btn'>
-        Ar
+      <label for='toggle-on' className='btn'>
+        {locale === "en" ? "العربية" : "English"}
       </label>
-      <input
+      {/* <input
         id='toggle-off'
-        class='toggle toggle-right'
+        className='toggle toggle-right'
         name='toggle'
         value='true'
         type='radio'
         onClick={handleClick}
+        checked={locale === "en"}
+        defaultChecked={locale === "en"}
       />
-      <label for='toggle-off' class='btn'>
-        En
-      </label>
+      <label for='toggle-off' className='btn'>
+        {locale === "ar" ? "English" : "العربية"}
+      </label> */}
     </div>
   );
 };
