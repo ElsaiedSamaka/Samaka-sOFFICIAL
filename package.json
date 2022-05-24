@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -15,7 +15,7 @@
     "sass": "^1.44.0",
     "scss": "^0.2.4",
     "styled-components": "^5.3.3",
-    "stylis-plugin-rtl": "^2.1.1"
+    "stylis-plugin-rtl": "^1"
   },
   "devDependencies": {
     "eslint": "8.4.1",
