@@ -17,6 +17,7 @@ function Home() {
       </Head>
       <Layout>
         <Navbar />
+        {/* <Nav /> */}
 
         <section className='hero'>
           <div className='container'>

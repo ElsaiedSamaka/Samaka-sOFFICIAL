@@ -36,11 +36,16 @@ function Navbar({ router }) {
   return (
     <nav className='navbar'>
       <div className='container'>
+        <input type='checkbox' id='drop-down-cbox' />
+        <label for='drop-down-cbox'>
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
         <Link href='/'>
           <a className='logo'>{t("home.nav")}</a>
         </Link>
-
-        <ul className='nav-links'>
+        <ul className='main-nav small-caps nav-links'>
           {navs.map((nav, i) => (
             <li key={i}>
               <Link href={nav.href}>
