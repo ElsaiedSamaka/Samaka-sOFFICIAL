@@ -37,7 +37,7 @@ function Navbar({ router }) {
     <nav className='navbar'>
       <div className='container'>
         <input type='checkbox' id='drop-down-cbox' />
-        <label for='drop-down-cbox'>
+        <label htmlFor='drop-down-cbox'>
           <span></span>
           <span></span>
           <span></span>
